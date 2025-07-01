@@ -43,11 +43,11 @@ func (Server) GetGet(ctx context.Context) (api.GetGetRes, error) {
 		// Добавляем информацию о сервисе в список:
 		// - CreateIndex: случайный индекс создания
 		// - Key: имя сервиса в формате "service-N"
-		// - Value: IP-адрес, закодированный в base64
+		// - Value: IP-адрес, закодированный в base64 (с padding '=')
 		services = append(services, api.Service{
 			CreateIndex: fmt.Sprintf("%d", rand.Intn(10000000)),
 			Key:         fmt.Sprintf("service-%d", i+1),
-			Value:       base64.RawStdEncoding.EncodeToString([]byte(ip)),
+			Value:       base64.StdEncoding.EncodeToString([]byte(ip)),
 		})
 	}
 	fmt.Println()
