@@ -128,18 +128,23 @@ func (s *Service) Encode(e *jx.Encoder) {
 // encodeFields encodes fields.
 func (s *Service) encodeFields(e *jx.Encoder) {
 	{
-		e.FieldStart("name")
-		e.Str(s.Name)
+		e.FieldStart("CreateIndex")
+		e.Str(s.CreateIndex)
 	}
 	{
-		e.FieldStart("ip")
-		e.Str(s.IP)
+		e.FieldStart("Key")
+		e.Str(s.Key)
+	}
+	{
+		e.FieldStart("Value")
+		e.Str(s.Value)
 	}
 }
 
-var jsonFieldsNameOfService = [2]string{
-	0: "name",
-	1: "ip",
+var jsonFieldsNameOfService = [3]string{
+	0: "CreateIndex",
+	1: "Key",
+	2: "Value",
 }
 
 // Decode decodes Service from json.
@@ -151,29 +156,41 @@ func (s *Service) Decode(d *jx.Decoder) error {
 
 	if err := d.ObjBytes(func(d *jx.Decoder, k []byte) error {
 		switch string(k) {
-		case "name":
+		case "CreateIndex":
 			requiredBitSet[0] |= 1 << 0
 			if err := func() error {
 				v, err := d.Str()
-				s.Name = string(v)
+				s.CreateIndex = string(v)
 				if err != nil {
 					return err
 				}
 				return nil
 			}(); err != nil {
-				return errors.Wrap(err, "decode field \"name\"")
+				return errors.Wrap(err, "decode field \"CreateIndex\"")
 			}
-		case "ip":
+		case "Key":
 			requiredBitSet[0] |= 1 << 1
 			if err := func() error {
 				v, err := d.Str()
-				s.IP = string(v)
+				s.Key = string(v)
 				if err != nil {
 					return err
 				}
 				return nil
 			}(); err != nil {
-				return errors.Wrap(err, "decode field \"ip\"")
+				return errors.Wrap(err, "decode field \"Key\"")
+			}
+		case "Value":
+			requiredBitSet[0] |= 1 << 2
+			if err := func() error {
+				v, err := d.Str()
+				s.Value = string(v)
+				if err != nil {
+					return err
+				}
+				return nil
+			}(); err != nil {
+				return errors.Wrap(err, "decode field \"Value\"")
 			}
 		default:
 			return d.Skip()
@@ -185,7 +202,7 @@ func (s *Service) Decode(d *jx.Decoder) error {
 	// Validate required fields.
 	var failures []validate.FieldError
 	for i, mask := range [1]uint8{
-		0b00000011,
+		0b00000111,
 	} {
 		if result := (requiredBitSet[i] & mask) ^ mask; result != 0 {
 			// Mask only required fields and check equality to mask using XOR.

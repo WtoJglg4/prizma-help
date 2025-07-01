@@ -26,26 +26,37 @@ func (*GetResponse) getGetRes() {}
 
 // Ref: #/components/schemas/Service
 type Service struct {
-	Name string `json:"name"`
-	IP   string `json:"ip"`
+	CreateIndex string `json:"CreateIndex"`
+	Key         string `json:"Key"`
+	Value       string `json:"Value"`
 }
 
-// GetName returns the value of Name.
-func (s *Service) GetName() string {
-	return s.Name
+// GetCreateIndex returns the value of CreateIndex.
+func (s *Service) GetCreateIndex() string {
+	return s.CreateIndex
 }
 
-// GetIP returns the value of IP.
-func (s *Service) GetIP() string {
-	return s.IP
+// GetKey returns the value of Key.
+func (s *Service) GetKey() string {
+	return s.Key
 }
 
-// SetName sets the value of Name.
-func (s *Service) SetName(val string) {
-	s.Name = val
+// GetValue returns the value of Value.
+func (s *Service) GetValue() string {
+	return s.Value
 }
 
-// SetIP sets the value of IP.
-func (s *Service) SetIP(val string) {
-	s.IP = val
+// SetCreateIndex sets the value of CreateIndex.
+func (s *Service) SetCreateIndex(val string) {
+	s.CreateIndex = val
+}
+
+// SetKey sets the value of Key.
+func (s *Service) SetKey(val string) {
+	s.Key = val
+}
+
+// SetValue sets the value of Value.
+func (s *Service) SetValue(val string) {
+	s.Value = val
 }
