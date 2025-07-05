@@ -34,13 +34,13 @@ components:
     Service:
       type: object
       properties:
-        CreateIndex: 
+        id: 
           type: string
-        Key:
+        key:
           type: string
-        Value:
+        value:
           type: string
       required:
-        - CreateIndex
-        - Key
-        - Value
+        - id
+        - key
+        - value
