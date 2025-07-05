@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"log/slog"
 
-	api "github.com/WtoJglg4/prizma-help/api/service"
-	"github.com/WtoJglg4/prizma-help/internal/config"
+	api "github.com/WtoJglg4/prizma-help/api/addressserver"
+	"github.com/WtoJglg4/prizma-help/internal/addressserver/config"
+	"github.com/WtoJglg4/prizma-help/internal/addressserver/server"
 	"github.com/WtoJglg4/prizma-help/internal/httpsrv"
-	"github.com/WtoJglg4/prizma-help/internal/server"
 )
 
 // Options содержит параметры, необходимые для запуска сервиса
@@ -33,7 +33,7 @@ func Run(ctx context.Context, opts Options) error {
 	})
 
 	// Создаем обработчик API запросов
-	handler, err := api.NewServer(server.Server{})
+	handler, err := api.NewServer(server.New(cfg))
 	if err != nil {
 		return fmt.Errorf("create api handler: %w", err)
 	}
