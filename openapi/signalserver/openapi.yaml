@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: Prizma Help API
+  description: API for prizma help
+  version: 1.0.0
+servers:
+  - url: /
+    description: Main API server
+paths:
+  /get:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignalResponse'
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    SignalResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        name: 
+          type: string
+        x:
+          type: array
+          items:
+            type: number
+        y:
+          type: array
+          items:
+            type: number
+      required:
+        - id
+        - name
+        - x
+        - y
