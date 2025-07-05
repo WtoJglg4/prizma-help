@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	api "github.com/WtoJglg4/prizma-help/api/signalserver"
+	api "github.com/WtoJglg4/prizma-help/api/signals"
 )
 
 // Server - структура, реализующая методы API сервиса

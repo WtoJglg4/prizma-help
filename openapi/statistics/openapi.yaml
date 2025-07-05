@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Prizma Help API
+  description: API for prizma help
+  version: 1.0.0
+servers:
+  - url: /
+    description: Main API server
+paths:
+  /statistics:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatisticsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatisticsResponse'
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    StatisticsRequest:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: number
+      required:
+        - values
+
+    StatisticsResponse:
+      type: object
+      properties:
+        max:
+          type: number
+        min:
+          type: number
+        average:
+          type: number
+      required:
+        - max
+        - min
+        - average

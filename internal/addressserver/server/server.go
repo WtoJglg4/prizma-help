@@ -7,7 +7,7 @@ import (
 	"math/rand"
 	"time"
 
-	api "github.com/WtoJglg4/prizma-help/api/addressserver"
+	api "github.com/WtoJglg4/prizma-help/api/address"
 	"github.com/WtoJglg4/prizma-help/internal/addressserver/config"
 )
 

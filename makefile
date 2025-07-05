@@ -1,8 +1,8 @@
 run-addr:
-	go run ./cmd/addressserver/main.go
+	go run ./cmd/address/main.go
 
 run-signal:
-	go run ./cmd/signalserver/main.go
+	go run ./cmd/signals/main.go
 
 run-stat:
-	go run ./cmd/stat/main.go
+	go run ./cmd/statistics/main.go
