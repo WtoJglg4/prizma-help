@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"log/slog"
 
-	api "github.com/WtoJglg4/prizma-help/api/address"
-	"github.com/WtoJglg4/prizma-help/internal/addressserver/config"
-	"github.com/WtoJglg4/prizma-help/internal/addressserver/server"
-	"github.com/WtoJglg4/prizma-help/internal/httpsrv"
+	api "github.com/GdeTutMute/summer_practice/servers/api/address"
+	"github.com/GdeTutMute/summer_practice/servers/internal/addressserver/config"
+	"github.com/GdeTutMute/summer_practice/servers/internal/addressserver/server"
+	"github.com/GdeTutMute/summer_practice/servers/internal/httpsrv"
 )
 
 // Options содержит параметры, необходимые для запуска сервиса

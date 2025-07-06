@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
-  title: Prizma Help API
-  description: API for prizma help
+  title: API
+  description: API for 
   version: 1.0.0
 servers:
   - url: /

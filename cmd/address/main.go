@@ -9,8 +9,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/WtoJglg4/prizma-help/internal/addressserver/config"
-	"github.com/WtoJglg4/prizma-help/internal/addressserver/run"
+	"github.com/GdeTutMute/summer_practice/servers/internal/addressserver/config"
+	"github.com/GdeTutMute/summer_practice/servers/internal/addressserver/run"
 )
 
 // main - точка входа в приложение

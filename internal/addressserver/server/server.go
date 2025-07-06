@@ -8,8 +8,8 @@ import (
 	"math/rand"
 	"time"
 
-	api "github.com/WtoJglg4/prizma-help/api/address"
-	"github.com/WtoJglg4/prizma-help/internal/addressserver/config"
+	api "github.com/GdeTutMute/summer_practice/servers/api/address"
+	"github.com/GdeTutMute/summer_practice/servers/internal/addressserver/config"
 )
 
 // Server - структура, реализующая методы API сервиса

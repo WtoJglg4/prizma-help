@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"log/slog"
 
-	api "github.com/WtoJglg4/prizma-help/api/signals"
-	"github.com/WtoJglg4/prizma-help/internal/httpsrv"
-	"github.com/WtoJglg4/prizma-help/internal/signalserver/config"
-	"github.com/WtoJglg4/prizma-help/internal/signalserver/server"
+	api "github.com/GdeTutMute/summer_practice/servers/api/signals"
+	"github.com/GdeTutMute/summer_practice/servers/internal/httpsrv"
+	"github.com/GdeTutMute/summer_practice/servers/internal/signalserver/config"
+	"github.com/GdeTutMute/summer_practice/servers/internal/signalserver/server"
 )
 
 // Options содержит параметры, необходимые для запуска сервиса

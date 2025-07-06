@@ -9,8 +9,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/WtoJglg4/prizma-help/internal/statisticsserver/config"
-	"github.com/WtoJglg4/prizma-help/internal/statisticsserver/run"
+	"github.com/GdeTutMute/summer_practice/servers/internal/statisticsserver/config"
+	"github.com/GdeTutMute/summer_practice/servers/internal/statisticsserver/run"
 )
 
 // main - точка входа в приложение

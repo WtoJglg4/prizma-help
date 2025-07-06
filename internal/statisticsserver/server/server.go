@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 
-	api "github.com/WtoJglg4/prizma-help/api/statistics"
+	api "github.com/GdeTutMute/summer_practice/servers/api/statistics"
 )
 
 var (
