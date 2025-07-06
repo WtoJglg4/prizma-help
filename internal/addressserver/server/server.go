@@ -3,6 +3,7 @@ package server
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
 	"math/rand"
 	"time"
@@ -13,14 +14,14 @@ import (
 
 // Server - структура, реализующая методы API сервиса
 type Server struct {
-	signalServerAddr     string
-	statisticsServerAddr string
+	signalServerAddrBase64     string
+	statisticsServerAddrBase64 string
 }
 
 func New(conf config.Config) *Server {
 	return &Server{
-		signalServerAddr:     conf.SignalServerAddr,
-		statisticsServerAddr: conf.StatisticsServerAddr,
+		signalServerAddrBase64:     base64.StdEncoding.EncodeToString([]byte(conf.SignalServerAddr)),
+		statisticsServerAddrBase64: base64.StdEncoding.EncodeToString([]byte(conf.StatisticsServerAddr)),
 	}
 }
 
@@ -36,12 +37,12 @@ func (s *Server) GetGet(ctx context.Context) (api.GetGetRes, error) {
 			{
 				ID:    fmt.Sprintf("%d", rand.Intn(10000000)),
 				Key:   "signal",
-				Value: s.signalServerAddr,
+				Value: s.signalServerAddrBase64,
 			},
 			{
 				ID:    fmt.Sprintf("%d", rand.Intn(10000000)),
 				Key:   "statistics",
-				Value: s.statisticsServerAddr,
+				Value: s.statisticsServerAddrBase64,
 			},
 		},
 	}, nil
